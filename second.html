@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="download.jfif" />
+    <title>წერილი ლიზის</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+        background-image: url(aaa.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 10px;
+        transition: transform 0.5s ease-in-out;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+      }
+
+      #yesButton {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      #noButton {
+        background-color: #e74c3c;
+        color: white;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      #responseMessage {
+        font-size: 18px;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      /* Responsive styles */
+      @media only screen and (max-width: 600px) {
+        button {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="a">
+      <h2>არწახვიდე იტალიაში❤️</h2>
+
+      <div class="button-container">
+        <button id="yesButton" onclick="redirectToCatPage()">კაი</button>
+        <button id="noButton" onclick="moveNoButton()">ვერა, შანსი არაა</button>
+      </div>
+    </div>
+
+    <p id="responseMessage"></p>
+
+    <script>
+      function redirectToCatPage() {
+        window.location.href = "catPage.html";
+      }
+
+      function moveNoButton() {
+        const noButton = document.getElementById("noButton");
+        const newPositionX = Math.floor(Math.random() * 360);
+        const newPositionY = Math.floor(Math.random() * 360);
+        noButton.style.transform = `translate(${newPositionX}%, ${newPositionY}%)`;
+      }
+
+      document
+        .getElementById("yesButton")
+        .addEventListener("click", function () {
+          document.getElementById("responseMessage").innerText = "yes";
+          redirectToCatPage();
+        });
+    </script>
+  </body>
+</html>
